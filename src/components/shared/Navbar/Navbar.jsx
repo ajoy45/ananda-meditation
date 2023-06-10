@@ -11,7 +11,7 @@ const Navbar = () => {
     </ul>
     
     return (
-        <div className="navbar bg-[#1d9ee6] rounded-xl py-2">
+        <div className="navbar bg-[#1d9ee6] py-2">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
