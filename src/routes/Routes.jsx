@@ -4,6 +4,8 @@ import Login from '../pages/Login/Login'
 import Register from '../pages/Register/Register'
 import ErrorPage from '../pages/Errorpage/ErrorPage'
 import Home from '../pages/Home/Home'
+import DashboardLayout from '../layouts/DashboardLayout'
+import AddClass from '../components/Dashboard/AddClass'
 
 export const router = createBrowserRouter([
   // main layout
@@ -24,41 +26,17 @@ export const router = createBrowserRouter([
         path:'register',
         element:<Register></Register>
       },
-    //   {
-    //     path: 'roomdetails/:id',
-    //     element: <PrivateRoute><RoomDetails></RoomDetails></PrivateRoute>,
-    //     loader:({params})=>getSingleRoom(params.id)
-    //   },
     ]
   },
-//   // login and signUp
-//   {
-//     path:'login',
-//     element:<Login></Login>
-//   },
-//   {
-//     path:'signup',
-//     element:<SignUp></SignUp>
-//   },
-//   // dashboard layout
-//   {
-//     path:"dashboard",
-//     element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
-//     children:[
-//       {
-//         path:'/dashboard/add-room',
-//         element:<AddRoom></AddRoom>
-//       },
-//       {
-//         path:'/dashboard/my-bookings',
-//         element:<MyBookings></MyBookings>
-        
-//       },
-//       {
-//         path:'/dashboard/my-listings',
-//         element:<MyListings></MyListings>
-        
-//       }
-//     ]
-//   }
+  {
+    path:'/dashboard',
+    element:<DashboardLayout></DashboardLayout>,
+    children:[
+      {
+        path:'/dashboard/add-class',
+        element:<AddClass></AddClass>
+      }
+    ]
+  }
+
 ])

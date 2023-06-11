@@ -1,15 +1,34 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import googleImg from '../../../src/assets/google.png'
 import showImg from '../../../src/assets/logo/show_icon.png'
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { AuthContext } from '../../Provider/AuthProvider';
+import { toast } from 'react-hot-toast';
+import { storeUserInDatabase } from '../../api/auth';
+
+
 const Login = () => {
+    const { signInWithGoogle,setLoading } = useContext(AuthContext)
     const [passwordVisible, setPasswordVisible] = useState(false);
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
     };
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        console.log(data)
+    };
+    const handelGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                storeUserInDatabase(result.user)
+                toast.success('google login successfully')
+            })
+            .catch(err=>{
+                toast.error('google login problem!!')
+                  setLoading(false)
+            })
+    }
     return (
         <section className="h-screen">
             <div className="h-full">
@@ -29,12 +48,12 @@ const Login = () => {
                         <form onSubmit={handleSubmit(onSubmit)}>
                             {/* <!--Sign in section--> */}
                             <div
-                                className="flex flex-row items-center justify-center ">
+                                className="flex flex-row items-center justify-center cursor-pointer">
                                 <p className="mb-0 mr-4 text-lg">Sign in with Google</p>
 
                                 {/* <!--Google login --> */}
 
-                                <img src={googleImg} alt="" />
+                                <img onClick={handelGoogleSignIn} src={googleImg} alt="" />
 
                             </div>
 

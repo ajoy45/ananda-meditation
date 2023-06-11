@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../../../src/assets/logo/1.png'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Provider/AuthProvider';
 const Navbar = () => {
+    const{logOut}=useContext(AuthContext);
+    const handelLogOut=()=>{
+        logOut().then(()=>{
+            console.log("logout success")
+        }).catch(error=>{
+           console.log('logout error')
+        })
+    }
     const nav=
         <ul className="menu menu-horizontal px-1 text-xl text-white">
         <li><a>Home</a></li>
         <li><a>Instructors</a></li>
         <li><a>Classes</a></li>
-        <li><a>Dashboard</a></li>
+        <Link to='/dashboard'><li><a>Dashboard</a></li></Link>
+        <li onClick={handelLogOut}><a>LogOut</a></li>
     </ul>
     
     return (
