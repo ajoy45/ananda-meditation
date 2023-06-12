@@ -1,6 +1,6 @@
-export const makeApproved=async id=>{
+export const makeStatus=async(id,text)=>{
     const currentStatus={
-       status:"Approved"
+       status:text
     }
     return await fetch(`http://localhost:5000/class/${id}`,{
         method:'PUT',

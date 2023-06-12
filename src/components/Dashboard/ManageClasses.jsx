@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { makeApproved } from '../../api/utilites';
+import { makeStatus } from '../../api/utilites';
 
 const ManageClasses = () => {
     const [classes, setClasses] = useState([]);
@@ -13,11 +13,17 @@ const ManageClasses = () => {
     
     useEffect(() => {
         fetchClasses();
-    }, [])
+    }, [classes])
 
-   const handelApproved=(id)=>{
+   const handelApproved=(id,text)=>{
         console.log(id)
-        makeApproved(id).then(data=>console.log(data))
+        makeStatus(id,text).then(data=>console.log(data));
+        setDisabledButtons([...disabledButtons,id])
+   }
+   const handelDeny=(id,text)=>{
+        console.log(id)
+        makeStatus(id,text).then(data=>console.log(data));
+        setDisabledButtons([...disabledButtons,id])
    }
   
 
@@ -65,8 +71,8 @@ const ManageClasses = () => {
                                 <td>{item.price}</td>
                                 <td>{item.status}</td>
                                 <th className='flex '>
-                                    <button onClick={()=>handelApproved(item._id)} className="btn bg-[#eec03f]  btn-xs">Approve</button>
-                                    <button className="btn bg-[#eec03f] btn-xs">Deny</button>
+                                    <button disabled={disabledButtons.includes(item._id)}  onClick={()=>handelApproved(item._id,'Approved')} className="btn bg-[#eec03f]  btn-xs">Approve</button>
+                                    <button disabled={disabledButtons.includes(item._id)} onClick={()=>handelDeny(item._id,"Denied")} className="btn bg-[#eec03f] btn-xs">Deny</button>
                                     <button className="btn bg-[#eec03f] btn-xs">send feedback</button>
                                 </th>
                             </tr>)
