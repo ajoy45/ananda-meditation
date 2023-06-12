@@ -32,6 +32,10 @@ const Register = () => {
             setError("don't have a special character");
             return
         }
+        if(data.password!==data.confirm){
+            setError('please confirm password');
+            return
+        }
         createUser(data.email,data.password)
         .then(result=>{
             toast.success('create user successfully')
@@ -111,6 +115,14 @@ const Register = () => {
                                                 <input
                                                     type={passwordVisible ? 'text' : 'password'}
                                                     placeholder="Password" className='border border-1 w-full py-2 border-sky-300'{...register("password", { required: true })} />
+                                                <img onClick={togglePasswordVisibility} className='w-5 absolute top-3 right-0 cursor-pointer' src={showImg} alt="" />
+                                                <p className='text-red-500'>{error}</p>
+                                            </div>
+                                             {/* <!--confirm password--> */}
+                                             <div className="relative mb-4" data-te-input-wrapper-init>
+                                                <input
+                                                    type={passwordVisible ? 'text' : 'password'}
+                                                    placeholder="Confirm Password" className='border border-1 w-full py-2 border-sky-300'{...register("confirm", { required: true })} />
                                                 <img onClick={togglePasswordVisibility} className='w-5 absolute top-3 right-0 cursor-pointer' src={showImg} alt="" />
                                                 <p className='text-red-500'>{error}</p>
                                             </div>

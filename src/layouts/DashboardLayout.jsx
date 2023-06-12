@@ -29,6 +29,9 @@ const DashboardLayout = () => {
                     {/* Sidebar content here */}
                     <div className='ps-10 mt-10'>
                         <Link to='/dashboard/add-class'><li>Add Class</li></Link>
+                        <Link to='/dashboard/manage-users'><li>Manage Users</li></Link>
+                        
+                        <Link to='/dashboard/manage-classes'><li>Manage Classes</li></Link>
                         
                        
                     </div>

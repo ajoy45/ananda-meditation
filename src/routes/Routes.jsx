@@ -6,6 +6,8 @@ import ErrorPage from '../pages/Errorpage/ErrorPage'
 import Home from '../pages/Home/Home'
 import DashboardLayout from '../layouts/DashboardLayout'
 import AddClass from '../components/Dashboard/AddClass'
+import ManageUsers from '../components/Dashboard/ManageUsers'
+import ManageClasses from '../components/Dashboard/ManageClasses'
 
 export const router = createBrowserRouter([
   // main layout
@@ -35,7 +37,15 @@ export const router = createBrowserRouter([
       {
         path:'/dashboard/add-class',
         element:<AddClass></AddClass>
-      }
+      },
+      {
+        path:'/dashboard/manage-users',
+        element:<ManageUsers></ManageUsers>
+      },
+      {
+        path:'/dashboard/manage-classes',
+        element:<ManageClasses></ManageClasses>
+      },
     ]
   }
 
