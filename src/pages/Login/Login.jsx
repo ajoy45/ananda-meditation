@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import googleImg from '../../../src/assets/google.png'
 import showImg from '../../../src/assets/logo/show_icon.png'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { toast } from 'react-hot-toast';
@@ -9,20 +9,30 @@ import { storeUserInDatabase } from '../../api/auth';
 
 
 const Login = () => {
-    const { signInWithGoogle,setLoading } = useContext(AuthContext)
+    const { signInWithGoogle,setLoading,signIn } = useContext(AuthContext)
     const [passwordVisible, setPasswordVisible] = useState(false);
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
     };
+    let navigate = useNavigate();
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data)
+        console.log(data.email)
+        signIn(data.email,data.password)
+        .then(result=>{
+            navigate(from, { replace: true });
+        }).catch(error=>{
+            console.log(error)
+        })
     };
     const handelGoogleSignIn = () => {
         signInWithGoogle()
             .then(result => {
                 storeUserInDatabase(result.user)
                 toast.success('google login successfully')
+                navigate(from, { replace: true });
             })
             .catch(err=>{
                 toast.error('google login problem!!')

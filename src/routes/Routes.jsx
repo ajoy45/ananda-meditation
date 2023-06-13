@@ -13,6 +13,7 @@ import MyClasses from '../components/Dashboard/MyClasses'
 import Classes from '../pages/Home/Classes'
 import Instructor from '../pages/instructor/Instructor'
 import MySelectedClass from '../components/Dashboard/MySelectedClass'
+import RequireAuth from '../privateRoute/RequireAuth'
 
 export const router = createBrowserRouter([
   // main layout
@@ -49,7 +50,9 @@ export const router = createBrowserRouter([
   },
   {
     path:'/dashboard',
-    element:<DashboardLayout></DashboardLayout>,
+    element:<RequireAuth>
+      <DashboardLayout></DashboardLayout>
+    </RequireAuth>,
     children:[
       {
         path:'/dashboard/add-class',

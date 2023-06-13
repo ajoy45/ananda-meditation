@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import showImg from '../../../src/assets/logo/show_icon.png'
 import googleImg from '../../../src/assets/google.png'
 import { useForm } from 'react-hook-form';
@@ -11,6 +11,10 @@ import { storeUserInDatabase } from '../../api/auth';
 
 const Register = () => {
     const { signInWithGoogle,setLoading,createUser,updateUserProfile } = useContext(AuthContext);
+    
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+    const navigate=useNavigate()
     const[error,setError]=useState('')
     const [passwordVisible, setPasswordVisible] = useState(false);
     const togglePasswordVisibility = () => {
@@ -44,6 +48,7 @@ const Register = () => {
                 // user save to database
                 storeUserInDatabase(result.user) 
                toast.success('update user profile')
+               navigate('/login')
               
            })
            .catch(error => {
@@ -64,6 +69,7 @@ const Register = () => {
             .then(result => {
                 storeUserInDatabase(result.user)
                 toast.success('google login successfully')
+                navigate(from, { replace: true });
             })
             .catch(err=>{
                 toast.error('google login problem!!')

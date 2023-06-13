@@ -19,7 +19,7 @@ const Classes = () => {
             <div>
                 <h1 className='text-center py-12 text-3xl'>Here Our Approved Classes</h1>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4'>
+            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4'>
                 {
                     approvedClass.map(item => <ClassCard
                         key={item._id}

@@ -3,7 +3,7 @@ import logo from '../../../../src/assets/logo/1.png'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
 const Navbar = () => {
-    const{logOut}=useContext(AuthContext);
+    const{logOut,user}=useContext(AuthContext);
     const handelLogOut=()=>{
         logOut().then(()=>{
             console.log("logout success")
@@ -13,7 +13,7 @@ const Navbar = () => {
     }
     const nav=
         <ul className="menu menu-horizontal px-1 text-xl text-white">
-        <li><a>Home</a></li>
+        <Link to='/'><li><a>Home</a></li></Link>
        <Link to='/instructor'> <li><a>Instructors</a></li></Link>
         <Link to='/classes'><li><a>Classes</a></li></Link>
         <Link to='/dashboard'><li><a>Dashboard</a></li></Link>
@@ -36,9 +36,18 @@ const Navbar = () => {
             <div className="navbar-center hidden lg:flex">
              {nav}
             </div>
-            <div className="navbar-end">
+          <div className="navbar-end">
+          {
+                user?<><div className="avatar">
+                <div className="w-10 rounded-full">
+                  <img src={user.photoURL} />
+                </div>
+              </div></>:<div >
                 <Link to='/login'><a className="px-4 py-2 bg-[#eec03f] rounded-lg text-white">Login</a></Link>
             </div>
+            }
+          </div>
+            
         </div>
     );
 };
