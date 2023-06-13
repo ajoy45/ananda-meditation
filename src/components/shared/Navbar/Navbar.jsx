@@ -14,8 +14,8 @@ const Navbar = () => {
     const nav=
         <ul className="menu menu-horizontal px-1 text-xl text-white">
         <li><a>Home</a></li>
-        <li><a>Instructors</a></li>
-        <li><a>Classes</a></li>
+       <Link to='/instructor'> <li><a>Instructors</a></li></Link>
+        <Link to='/classes'><li><a>Classes</a></li></Link>
         <Link to='/dashboard'><li><a>Dashboard</a></li></Link>
         <li onClick={handelLogOut}><a>LogOut</a></li>
     </ul>

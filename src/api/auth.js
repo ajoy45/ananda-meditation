@@ -1,6 +1,8 @@
 export const storeUserInDatabase=user=>{
     const currentUser={
-       email:user.email
+       email:user.email,
+       image:user.photoURL,
+       name:user.displayName
     }
     fetch(`http://localhost:5000/users/${user?.email}`,{
         method:'PUT',

@@ -3,7 +3,8 @@ import { Link, Outlet } from 'react-router-dom';
 import logo from '../../src/assets/logo/1.png'
 import { AuthContext } from '../Provider/AuthProvider';
 const DashboardLayout = () => {
-    const { user } = useContext(AuthContext)
+    const { user,role } = useContext(AuthContext);
+    console.log(role)
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -28,10 +29,20 @@ const DashboardLayout = () => {
                     </div>
                     {/* Sidebar content here */}
                     <div className='ps-10 mt-10'>
-                        <Link to='/dashboard/add-class'><li>Add Class</li></Link>
+                        {role==='admin'?<>
                         <Link to='/dashboard/manage-users'><li>Manage Users</li></Link>
-                        
                         <Link to='/dashboard/manage-classes'><li>Manage Classes</li></Link>
+                        </>:role==='instructor'?<>
+                        <Link to='/dashboard/add-class'><li>Add Class</li></Link>
+                        <Link to='/dashboard/my-classes'><li>My Classes</li></Link>
+                        </>:<>
+                        <Link to='/dashboard/my-selected-class'><li>My selected Class</li></Link>
+                        </>}
+                       
+
+                        
+                        
+                        
                         
                        
                     </div>

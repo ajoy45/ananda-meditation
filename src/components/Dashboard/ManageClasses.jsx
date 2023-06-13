@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { makeStatus } from '../../api/utilites';
+import {  makeStatus } from '../../api/utilites';
+import { Link } from 'react-router-dom';
 
 const ManageClasses = () => {
     const [classes, setClasses] = useState([]);
@@ -25,7 +26,9 @@ const ManageClasses = () => {
         makeStatus(id,text).then(data=>console.log(data));
         setDisabledButtons([...disabledButtons,id])
    }
-  
+  const handelFeedback=(id,text)=>{
+    
+  }
 
 
     return (
@@ -73,7 +76,7 @@ const ManageClasses = () => {
                                 <th className='flex '>
                                     <button disabled={disabledButtons.includes(item._id)}  onClick={()=>handelApproved(item._id,'Approved')} className="btn bg-[#eec03f]  btn-xs">Approve</button>
                                     <button disabled={disabledButtons.includes(item._id)} onClick={()=>handelDeny(item._id,"Denied")} className="btn bg-[#eec03f] btn-xs">Deny</button>
-                                    <button className="btn bg-[#eec03f] btn-xs">send feedback</button>
+                                   <Link to={`/feedback/${item._id}`}> <button className="btn bg-[#eec03f] btn-xs">Feedback</button></Link>
                                 </th>
                             </tr>)
                         }
