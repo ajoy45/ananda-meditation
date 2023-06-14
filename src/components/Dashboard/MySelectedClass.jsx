@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 const MySelectedClass = () => {
     const [selectClass, setSelectClass] = useState([]);
@@ -27,7 +28,7 @@ const MySelectedClass = () => {
     }
     return (
         <div>
-            <h1> My selected class</h1>
+         
             <div>
             <table className="table table-zebra">
                 {/* head */}
@@ -47,8 +48,7 @@ const MySelectedClass = () => {
                             <td>{item.instructorName}</td>
                             <td>${item.price}</td>
                             <td><button onClick={()=>handelDelete(item._id)} className='px-3 py-2 rounded-xl bg-[#eec03f]'>DELETE</button></td>
-                            <td><button className='px-3 py-2 rounded-xl bg-[#eec03f]'>PAY</button></td>
-                            
+                            <td><Link to={`/checkout/${item._id}`}><button className='px-3 py-2 rounded-xl bg-[#eec03f]'>PAY</button></Link></td>
                             
                         </tr>)
                     }

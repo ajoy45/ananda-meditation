@@ -37,6 +37,8 @@ const DashboardLayout = () => {
                         <Link to='/dashboard/my-classes'><li>My Classes</li></Link>
                         </>:<>
                         <Link to='/dashboard/my-selected-class'><li>My selected Class</li></Link>
+                        <Link to='/dashboard/my-enrolled-class'><li>My enrolled Class</li></Link>
+                        <Link to='/dashboard/payment-history'><li>Payment History</li></Link>
                         </>}
                        
 
