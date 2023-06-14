@@ -2,8 +2,15 @@ import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import logo from '../../src/assets/logo/1.png'
 import { AuthContext } from '../Provider/AuthProvider';
+import { AiOutlineUserAdd } from 'react-icons/ai'
+import { MdFlightClass } from 'react-icons/md'
+import { MdOutlineFlightClass } from 'react-icons/md'
+import { FaAddressCard } from 'react-icons/fa'
+import { AiOutlineSelect } from 'react-icons/ai'
+import { BiArchiveIn} from 'react-icons/bi'
+import { BiHistory} from 'react-icons/bi'
 const DashboardLayout = () => {
-    const { user,role } = useContext(AuthContext);
+    const { user, role } = useContext(AuthContext);
     console.log(role)
     return (
         <div className="drawer lg:drawer-open">
@@ -29,24 +36,46 @@ const DashboardLayout = () => {
                     </div>
                     {/* Sidebar content here */}
                     <div className='ps-10 mt-10'>
-                        {role==='admin'?<>
-                        <Link to='/dashboard/manage-users'><li>Manage Users</li></Link>
-                        <Link to='/dashboard/manage-classes'><li>Manage Classes</li></Link>
-                        </>:role==='instructor'?<>
-                        <Link to='/dashboard/add-class'><li>Add Class</li></Link>
-                        <Link to='/dashboard/my-classes'><li>My Classes</li></Link>
-                        </>:<>
-                        <Link to='/dashboard/my-selected-class'><li>My selected Class</li></Link>
-                        <Link to='/dashboard/my-enrolled-class'><li>My enrolled Class</li></Link>
-                        <Link to='/dashboard/payment-history'><li>Payment History</li></Link>
-                        </>}
-                       
+                        {role === 'admin' ? <>
+                            <div className='flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform text-gray-600  hover:bg-[#eec03f]   hover:text-gray-700 cursor-pointer'>
+                                < AiOutlineUserAdd className='w-5 h-5' />
+                                <Link to='/dashboard/manage-users'><li>Manage Users</li></Link>
+                            </div>
 
-                        
-                        
-                        
-                        
-                       
+                            <div className='flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform text-gray-600  hover:bg-[#eec03f]   hover:text-gray-700 cursor-pointer'>
+                                <MdFlightClass className='w-5 h-5' />
+                                <Link to='/dashboard/manage-classes'><li>Manage Classes</li></Link>
+                            </div>
+                        </> : role === 'instructor' ? <>
+                            <div className='flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform text-gray-600  hover:bg-[#eec03f]   hover:text-gray-700 cursor-pointer'>
+                                <FaAddressCard className='w-5 h-5' />
+                                <Link to='/dashboard/add-class'><li>Add Class</li></Link>
+                            </div>
+                            <div className='flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform text-gray-600  hover:bg-[#eec03f]   hover:text-gray-700 cursor-pointer'>
+                                <MdOutlineFlightClass className='w-5 h-5' />
+                                <Link to='/dashboard/my-classes'><li>My Classes</li></Link>
+                            </div>
+                        </> : <>
+                            <div className='flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform text-gray-600  hover:bg-[#eec03f]   hover:text-gray-700 cursor-pointer'>
+                                <AiOutlineSelect className='w-5 h-5'/>
+                                <Link to='/dashboard/my-selected-class'><li>My selected Class</li></Link>
+                            </div>
+                            <div className='flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform text-gray-600  hover:bg-[#eec03f]   hover:text-gray-700 cursor-pointer'>
+                                <BiArchiveIn className='w-5 h-5'/>
+                            <Link to='/dashboard/my-enrolled-class'><li>My enrolled Class</li></Link>
+                            </div>
+                            <div className='flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform text-gray-600  hover:bg-[#eec03f]   hover:text-gray-700 cursor-pointer'>
+                               <BiHistory className='w-5 h-5'/> 
+                            <Link to='/dashboard/payment-history'><li>Payment History</li></Link>
+                            </div>
+                        </>}
+
+
+
+
+
+
+
                     </div>
                 </ul>
 
