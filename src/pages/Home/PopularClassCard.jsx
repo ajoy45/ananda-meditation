@@ -1,0 +1,19 @@
+import React from 'react';
+
+const PopularClassCard = ({item}) => {
+    return (
+        <div className="card w-full bg-base-100 shadow-xl">
+            <figure className="px-10 pt-10">
+                <img src={item.image} alt="Shoes" className="rounded-xl" />
+            </figure>
+            <div className="card-body items-center text-center">
+                <h2 className="card-title">{item.className}</h2>
+                <p>available seats:{item.availableSeat}</p>
+                <p>Price:${item.price}</p>
+               
+            </div>
+        </div>
+    );
+};
+
+export default PopularClassCard;

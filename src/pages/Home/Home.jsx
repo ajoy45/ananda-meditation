@@ -6,6 +6,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
+import PopularInstructor from './PopularInstructor';
+import PopularClass from './popularClass';
+import Step from './Step';
 
 
 const Home = () => {
@@ -17,6 +20,15 @@ const Home = () => {
                 <SwiperSlide><video controls autoPlay loop muted src={slider3}></video></SwiperSlide>
                
             </Swiper>
+            <div>
+                <PopularClass></PopularClass>
+            </div>
+            <div>
+                <PopularInstructor></PopularInstructor>
+            </div>
+            <div>
+                <Step></Step>
+            </div>
         </div>
     );
 };
