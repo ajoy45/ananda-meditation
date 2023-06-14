@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import {  makeStatus } from '../../api/utilites';
 import { Link } from 'react-router-dom';
+import { Zoom } from 'react-awesome-reveal';
 
 const ManageClasses = () => {
     const [classes, setClasses] = useState([]);
@@ -32,6 +33,7 @@ const ManageClasses = () => {
 
 
     return (
+        <Zoom duration={3000}>
         <div>
             <div className="overflow-x-auto">
                 <table className="table">
@@ -90,6 +92,7 @@ const ManageClasses = () => {
                 </table>
             </div>
         </div>
+        </Zoom>
     );
 };
 

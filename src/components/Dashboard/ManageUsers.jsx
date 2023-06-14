@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { makeAdmin, makeInstructor } from '../../api/auth';
 import { AuthContext } from '../../Provider/AuthProvider';
 import axios from 'axios';
+import { Zoom } from 'react-awesome-reveal';
 const ManageUsers = () => {
     const [disabledButtons, setDisabledButtons] = useState([]);
   
@@ -34,7 +35,8 @@ const ManageUsers = () => {
     
     // console.log(users)
     return (
-        <div className="overflow-x-auto">
+        <Zoom duration={3000}>
+           <div className="overflow-x-auto">
             <table className="table ">
                 {/* head */}
                 <thead>
@@ -66,6 +68,7 @@ const ManageUsers = () => {
                 </tbody>
             </table>
         </div>
+        </Zoom>
     );
 };
 

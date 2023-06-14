@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Zoom } from 'react-awesome-reveal';
 
 const PaymentHistory = () => {
     const [payment, setPayment] = useState([]);
@@ -8,7 +9,8 @@ const PaymentHistory = () => {
             .then(data => setPayment(data))
     }, [])
     return (
-        <div className="overflow-x-auto">
+        <Zoom duration={3000}>
+            <div className="overflow-x-auto">
             <table className="table table-zebra">
                 {/* head */}
                 <thead>
@@ -38,6 +40,7 @@ const PaymentHistory = () => {
                 </tbody>
             </table>
         </div>
+        </Zoom>
     );
 };
 

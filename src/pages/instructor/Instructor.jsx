@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import InstructorCard from './InstructorCard';
+import { Zoom } from 'react-awesome-reveal';
 
 const Instructor = () => {
     const [instructors, setInstructor] = useState([]);
@@ -14,7 +15,8 @@ const Instructor = () => {
         instructorData();
     }, [instructors])
     return (
-        <div>
+        <Zoom duration={3000}>
+            <div>
             <div>
                 <h1 className='text-center py-12 text-3xl'>Here Our Instructor</h1>
             </div>
@@ -27,6 +29,7 @@ const Instructor = () => {
                 }
             </div>
         </div>
+        </Zoom>
     );
 };
 

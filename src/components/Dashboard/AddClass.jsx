@@ -3,6 +3,7 @@ import { imageUpload } from '../../api/imageUpload';
 import { addClass } from '../../api/class';
 import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { Zoom } from 'react-awesome-reveal';
 
 const Addclass = () => {
     const{user}=useContext(AuthContext)
@@ -34,7 +35,8 @@ const Addclass = () => {
         // console.log(className,image,instructorName,instructorEmail,availableSeat,price)
     }
     return (
-        <div>
+        <Zoom duration={3000}>
+            <div>
             <div
                 className="block max-w-md rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 mx-auto mt-5">
                 <form onSubmit={handelSubmit}>
@@ -109,6 +111,7 @@ const Addclass = () => {
                 </form>
             </div>
         </div>
+        </Zoom>
     );
 };
 
