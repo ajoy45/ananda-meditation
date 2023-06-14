@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import slider1 from '../../../src/assets/slider/slider1.mp4'
 import slider2 from '../../../src/assets/slider/slider2.mp4'
 import slider3 from '../../../src/assets/slider/slider3.mp4'
@@ -12,8 +12,14 @@ import Step from './Step';
 
 
 const Home = () => {
+    const[theme,setTheme]=useState(localStorage.getItem('mode'))
+    useEffect(()=>{
+        const mode=localStorage.getItem('mode')
+         setTheme(mode)
+    },[localStorage.getItem('mode')])
+    console.log(theme)
     return (
-        <div>
+        <div className=''>
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                 <SwiperSlide><video controls autoPlay loop muted src={slider1}></video></SwiperSlide>
                 <SwiperSlide><video controls autoPlay loop muted src={slider2}></video></SwiperSlide>

@@ -2,7 +2,7 @@ export const makeStatus=async(id,text)=>{
     const currentStatus={
        status:text
     }
-    return await fetch(`http://localhost:5000/class/${id}`,{
+    return await fetch(`https://assingement-12-server.vercel.app/class/${id}`,{
         method:'PUT',
         headers:{
             'content-type':'application/json'
@@ -16,7 +16,7 @@ export const makeFeedback=async(id,text)=>{
     const currentStatus={
        feedback:text
     }
-    return await fetch(`http://localhost:5000/class/${id}`,{
+    return await fetch(`https://assingement-12-server.vercel.app/class/${id}`,{
         method:'PUT',
         headers:{
             'content-type':'application/json'

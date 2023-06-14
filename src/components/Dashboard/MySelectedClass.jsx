@@ -6,7 +6,7 @@ import { Zoom } from "react-awesome-reveal";
 const MySelectedClass = () => {
     const [selectClass, setSelectClass] = useState([]);
     const myClasses = async () => {
-        const response = await axios.get('http://localhost:5000/booking');
+        const response = await axios.get('https://assingement-12-server.vercel.app/booking');
         setSelectClass(response.data)
 
     };
@@ -16,7 +16,7 @@ const MySelectedClass = () => {
     }, [selectClass])
     const handelDelete = id => {
         console.log(id)
-        axios.delete(`http://localhost:5000/booking/${id}`)
+        axios.delete(`https://assingement-12-server.vercel.app/booking/${id}`)
             .then(res => {
                 if (res.data.deletedCount === 1) {
                     toast('delete successful')

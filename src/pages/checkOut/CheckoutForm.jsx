@@ -11,7 +11,7 @@ const CheckoutForm = ({selectClass}) => {
   const[clientSecret,setClientSecret]=useState('');
   useEffect(()=>{
     if(selectClass?.price){
-      axios.post('http://localhost:5000/create-payment-intent',{price:selectClass?.price}).then(res=>{
+      axios.post('https://assingement-12-server.vercel.app/create-payment-intent',{price:selectClass?.price}).then(res=>{
         console.log(res.data.clientSecret)
         setClientSecret(res.data.clientSecret)
       })
@@ -73,7 +73,7 @@ const CheckoutForm = ({selectClass}) => {
           transactionId:paymentIntent?.id,
           data:new Date()
         }
-         fetch('http://localhost:5000/confirm',{
+         fetch('https://assingement-12-server.vercel.app/confirm',{
           method:"POST",
           headers:{
             "content-type":"application/json"

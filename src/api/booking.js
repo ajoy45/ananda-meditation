@@ -1,6 +1,6 @@
 export const addBooking= async bookingData=>{
     
-    const res=await fetch('http://localhost:5000/booking',{
+    const res=await fetch('https://assingement-12-server.vercel.app/booking',{
         method:'POST',
         headers:{
             'content-type':'application/json'

@@ -10,7 +10,7 @@ const ManageUsers = () => {
     const [users, setUsers] = useState([]);
     const{role}=useContext(AuthContext)
     const fetchUsers = async () => {
-          const response = await axios.get('http://localhost:5000/users');
+          const response = await axios.get('https://assingement-12-server.vercel.app/users');
           setUsers(response.data)
        
       };

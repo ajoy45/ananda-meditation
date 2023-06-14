@@ -2,7 +2,7 @@ import React from 'react';
 import { Zoom } from 'react-awesome-reveal';
 
 const InstructorCard = ({instructor}) => {
-    console.log(instructor)
+    // console.log(instructor)
     return (
        <Zoom duration={3000}>
          <div className="card w-full mt-12 bg-base-100 shadow-xl">

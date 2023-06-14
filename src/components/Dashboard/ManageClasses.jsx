@@ -8,7 +8,7 @@ const ManageClasses = () => {
     const [classes, setClasses] = useState([]);
     const [disabledButtons, setDisabledButtons] = useState([]);
     const fetchClasses = async () => {
-        const response = await axios.get('http://localhost:5000/class');
+        const response = await axios.get('https://assingement-12-server.vercel.app/class');
         setClasses(response.data)
 
     };

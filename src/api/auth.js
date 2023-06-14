@@ -4,7 +4,7 @@ export const storeUserInDatabase=user=>{
        image:user.photoURL,
        name:user.displayName
     }
-    fetch(`http://localhost:5000/users/${user?.email}`,{
+    fetch(`https://assingement-12-server.vercel.app/users/${user?.email}`,{
         method:'PUT',
         headers:{
             'content-type':'application/json'
@@ -18,7 +18,7 @@ export const makeAdmin=async email=>{
     const currentUser={
        role:"admin"
     }
-    return await fetch(`http://localhost:5000/users/${email}`,{
+    return await fetch(`https://assingement-12-server.vercel.app/users/${email}`,{
         method:'PUT',
         headers:{
             'content-type':'application/json'
@@ -32,7 +32,7 @@ export const makeInstructor=async email=>{
     const currentUser={
        role:"instructor"
     }
-    return await fetch(`http://localhost:5000/users/${email}`,{
+    return await fetch(`https://assingement-12-server.vercel.app/users/${email}`,{
         method:'PUT',
         headers:{
             'content-type':'application/json'
@@ -46,7 +46,7 @@ export const makeAmin=async email=>{
     const currentUser={
        role:"admin"
     }
-    return await fetch(`http://localhost:5000/users/${email}`,{
+    return await fetch(`https://assingement-12-server.vercel.app/users/${email}`,{
         method:'PUT',
         headers:{
             'content-type':'application/json'
@@ -57,7 +57,7 @@ export const makeAmin=async email=>{
     
 }
 export const getRole=async (email)=>{
-    const res=await fetch(`http://localhost:5000/users/${email}`);
+    const res=await fetch(`https://assingement-12-server.vercel.app/users/${email}`);
     const user=await res.json();
     return user?.role
  }

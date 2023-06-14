@@ -8,7 +8,7 @@ import PopularClassCard from './PopularClassCard';
 const PopularClass = () => {
     const [classes, setClasses] = useState([]);
     const instructorData = async () => {
-        const response = await axios.get('http://localhost:5000/class');
+        const response = await axios.get('https://assingement-12-server.vercel.app/class');
         setClasses(response.data)
 
     };

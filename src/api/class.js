@@ -1,6 +1,6 @@
 export const addClass= async classData=>{
     
-    const res=await fetch('http://localhost:5000/class',{
+    const res=await fetch('https://assingement-12-server.vercel.app/class',{
         method:'POST',
         headers:{
             'content-type':'application/json'

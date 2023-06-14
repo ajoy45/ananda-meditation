@@ -6,7 +6,7 @@ import { Zoom } from 'react-awesome-reveal';
 const Instructor = () => {
     const [instructors, setInstructor] = useState([]);
     const instructorData = async () => {
-        const response = await axios.get('http://localhost:5000/instructor');
+        const response = await axios.get('https://assingement-12-server.vercel.app/instructor');
         setInstructor(response.data)
 
     };

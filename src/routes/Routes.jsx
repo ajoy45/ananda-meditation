@@ -52,7 +52,7 @@ export const router = createBrowserRouter([
       {
         path:'checkout/:id',
         element:<ShowCheckout></ShowCheckout>,
-        loader:({params})=>fetch(`http://localhost:5000/booking/${params.id}`)
+        loader:({params})=>fetch(`https://assingement-12-server.vercel.app/booking/${params.id}`)
       },
     ]
   },

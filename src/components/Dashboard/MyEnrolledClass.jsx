@@ -4,7 +4,7 @@ import { Zoom } from 'react-awesome-reveal';
 const MyEnrolledClass = () => {
     const [enroll,setEnroll]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/confirm')
+        fetch('https://assingement-12-server.vercel.app/confirm')
         .then(res=>res.json())
         .then(data=>setEnroll(data))
     },[])
