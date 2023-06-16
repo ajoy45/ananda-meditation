@@ -4,16 +4,17 @@ import ClassCard from './ClassCard';
 
 const Classes = () => {
     const [approvedClass, setApprovedClass] = useState([]);
-    const myClasses = async () => {
-        const response = await axios.get('https://assingement-12-server.vercel.app/class/status');
-        setApprovedClass(response.data)
-
-    };
+   
 
     useEffect(() => {
-        myClasses();
+        const myClasses = async () => {
+            const response = await axios.get('https://assingement-12-server.vercel.app/class/status');
+            setApprovedClass(response.data)
+    
+        };
+        myClasses()
     }, [])
-    console.log(approvedClass)
+    // console.log(approvedClass)
     return (
         <div>
             <div>

@@ -7,15 +7,16 @@ import PopularClassCard from './PopularClassCard';
 
 const PopularClass = () => {
     const [classes, setClasses] = useState([]);
-    const instructorData = async () => {
-        const response = await axios.get('https://assingement-12-server.vercel.app/class');
-        setClasses(response.data)
-
-    };
+  
 
     useEffect(() => {
-        instructorData();
-    }, [classes])
+        const instructorData = async () => {
+            const response = await axios.get('https://assingement-12-server.vercel.app/class');
+            setClasses(response.data)
+    
+        };
+        instructorData()
+    }, [])
     return (
         <div className='mb-12'>
             <div>

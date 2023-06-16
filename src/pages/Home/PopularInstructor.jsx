@@ -4,15 +4,16 @@ import InstructorCard from '../instructor/InstructorCard';
 
 const PopularInstructor = () => {
     const [instructors, setInstructor] = useState([]);
-    const instructorData = async () => {
-        const response = await axios.get('https://assingement-12-server.vercel.app/instructor');
-        setInstructor(response.data)
-
-    };
+    
 
     useEffect(() => {
-        instructorData();
-    }, [instructors])
+        const instructorData = async () => {
+            const response = await axios.get('https://assingement-12-server.vercel.app/instructor');
+            setInstructor(response.data)
+    
+        };
+        instructorData()
+    }, [])
     return (
         <div className='mb-12'>
             <div>
