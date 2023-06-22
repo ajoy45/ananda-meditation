@@ -14,4 +14,4 @@
 * swiper
 * axios
 ## Live site link
-* https://6489cd85d5c94200a8ef320a--iridescent-pithivier-338552.netlify.app/
+* https://iridescent-pithivier-338552.netlify.app/
