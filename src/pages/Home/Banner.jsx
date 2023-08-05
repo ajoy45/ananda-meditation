@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../../../src/assets/slider/bg.jpg'
+import image from '../../../src/assets/logo/home.jpg'
 import { Fade } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
 const Banner = () => {
