@@ -12,15 +12,15 @@ const Pricing = () => {
             </div>
          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-5 mb-5'>
             <div className="mb-4 overflow-hidden rounded-lg shadow-lg">
-                <div className="px-6 py-8 bg-white dark:bg-gray-800 sm:p-10 sm:pb-6">
+                <div className="px-6 py-8 bg-white dark:bg-gray-800 sm:p-10 sm:pb-6 hover:bg-[#7b6cd5] hover:text-white">
                     <div className="flex justify-center">
                         <span className="text-3xl font-bold">
                             Basic Plan
                         </span>
                     </div>
-                    <div className="flex justify-center mt-4 text-6xl font-extrabold leading-none dark:text-white">
+                    <div className="flex justify-center mt-4 text-6xl font-extrabold leading-none dark:text-white hover:text-white">
                         $10
-                        <span className="pt-8 ml-1 text-2xl font-medium leading-8 text-gray-500 dark:text-gray-400">
+                        <span className="pt-8 ml-1 text-2xl font-medium leading-8 text-gray-500 hover:text-white  dark:text-gray-400">
                             /month
                         </span>
                     </div>
@@ -69,7 +69,7 @@ const Pricing = () => {
                 </div>
             </div>
             <div className="mb-4 overflow-hidden rounded-lg shadow-lg">
-                <div className="px-6 py-8 bg-white dark:bg-gray-800 sm:p-10 sm:pb-6">
+                <div className="px-6 py-8 bg-white dark:bg-gray-800 sm:p-10 sm:pb-6 hover:text-white hover:bg-[#7b6cd5]">
                     <div className="flex justify-center">
                         <span className="text-3xl font-bold">
                            Premium
@@ -78,7 +78,7 @@ const Pricing = () => {
                     <div className="flex justify-center mt-4 text-6xl font-extrabold leading-none dark:text-white">
                         
                         $50
-                        <span className="pt-8 ml-1 text-2xl font-medium leading-8 text-gray-500 dark:text-gray-400">
+                        <span className="pt-8 ml-1 text-2xl font-medium leading-8 text-gray-500 hover:text-white dark:text-gray-400">
                             /month
                         </span>
                     </div>
@@ -127,7 +127,7 @@ const Pricing = () => {
                 </div>
             </div>
             <div className="mb-4 overflow-hidden rounded-lg shadow-lg">
-                <div className="px-6 py-8 bg-white dark:bg-gray-800 sm:p-10 sm:pb-6">
+                <div className="px-6 py-8 bg-white dark:bg-gray-800 sm:p-10 sm:pb-6 hover:bg-[#7b6cd5] hover:text-white">
                     <div className="flex justify-center">
                         <span className="text-3xl font-bold">
                            Platinum
@@ -136,7 +136,7 @@ const Pricing = () => {
                     <div className="flex justify-center mt-4 text-6xl font-extrabold leading-none dark:text-white">
                         
                         $100
-                        <span className="pt-8 ml-1 text-2xl font-medium leading-8 text-gray-500 dark:text-gray-400">
+                        <span className="pt-8 ml-1 text-2xl font-medium leading-8 text-gray-500 hover:text-white dark:text-gray-400">
                             /month
                         </span>
                     </div>
