@@ -6,6 +6,7 @@ import PopularInstructor from './PopularInstructor';
 import PopularClass from './popularClass';
 import Step from './Step';
 import Banner from './Banner';
+import Activity from './Activity';
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
     return (
         <div className=''>
             <Banner></Banner>
+            <Activity></Activity>
             <div>
                 <PopularClass></PopularClass>
             </div>

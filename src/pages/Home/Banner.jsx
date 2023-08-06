@@ -4,7 +4,7 @@ import { Fade } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
 const Banner = () => {
     return (
-        <div className='brightness-50'  style={{ 
+        <div   style={{ 
             backgroundImage: `url(${image})`,
             backgroundPosition:"center",
             backgroundRepeat:"no-repeat",
