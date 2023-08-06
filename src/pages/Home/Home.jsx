@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-
-
-
 import PopularInstructor from './PopularInstructor';
-import PopularClass from './popularClass';
+import PopularClass from './PopularClass';
 import Step from './Step';
 import Banner from './Banner';
 import Activity from './Activity';
+import Team from './Team';
 
 
 const Home = () => {
@@ -26,6 +24,7 @@ const Home = () => {
             <div>
                 <PopularInstructor></PopularInstructor>
             </div>
+            <Team></Team>
             <div>
                 <Step></Step>
             </div>
