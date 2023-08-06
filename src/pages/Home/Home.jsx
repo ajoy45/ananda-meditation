@@ -5,6 +5,7 @@ import Step from './Step';
 import Banner from './Banner';
 import Activity from './Activity';
 import Team from './Team';
+import Pricing from './Pricing';
 
 
 const Home = () => {
@@ -25,9 +26,8 @@ const Home = () => {
                 <PopularInstructor></PopularInstructor>
             </div>
             <Team></Team>
-            <div>
-                <Step></Step>
-            </div>
+          
+            <Pricing></Pricing>
         </div>
     );
 };

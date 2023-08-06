@@ -6,6 +6,7 @@ import image3 from '../../../src/assets/team/3.png';
 const Team = () => {
     return (
         <div>
+           
             <div className=" w-72 mx-auto text-black mt-20">
                 <div className="divider ">
                     <img className='w-8' src={image} alt="" />
