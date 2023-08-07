@@ -1,9 +1,11 @@
 import React from 'react';
 import image from '../../../src/assets/team/about.png';
 import image1 from '../../../src/assets/logo/meditation.png'
+import { Slide } from 'react-awesome-reveal';
 const About = () => {
     return (
-        <div >
+       <Slide direction='left' duration='3000'>
+         <div >
             <div className=" w-72 mx-auto text-black mt-20">
                 <div className="divider ">
                     <img className='w-8' src={image1} alt="" />
@@ -30,6 +32,7 @@ const About = () => {
                 </div>
             </div>
         </div>
+       </Slide>
     );
 };
 

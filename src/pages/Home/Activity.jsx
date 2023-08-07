@@ -3,9 +3,11 @@ import image from '../../../src/assets/logo/meditation.png';
 import img1 from '../../../src/assets/slider/Screenshot_1.png';
 import img2 from '../../../src/assets/slider/Screenshot_2.png';
 import img3 from '../../../src/assets/slider/Screenshot_3.png';
+import { Slide } from 'react-awesome-reveal';
 const Activity = () => {
     return (
-        <div>
+       <Slide direction='right' duration='3000'>
+         <div>
             <div className=" w-56 mx-auto text-black mt-20">
                 <div className="divider ">
                     <img className='w-8' src={image} alt="" />
@@ -45,6 +47,7 @@ const Activity = () => {
                 </div>
             </div>
         </div>
+       </Slide>
     );
 };
 
