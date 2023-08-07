@@ -18,7 +18,7 @@ const Activity = () => {
                     <h1 className='text-xl font-bold m-3'>Heal Your Emotions</h1>
                     <p className='text-center text-md hover:text-white'>Have you ever met an angry or rude cashier who looks like they will explode with anger at any moment? Have you dealt with a colleague who seems depressed or has sorrowful energy?</p>
                 </div>
-                <div className='grid justify-items-center hover:bg-[#887ad9] p-12 ease-linear duration-300'>
+                <div className='grid justify-items-center bg-[#887ad9] p-12 ease-linear duration-300'>
                     <img src={img2} alt="" />
                     <h1 className='text-xl font-bold m-3'>Body & Spirituality</h1>
                     <p className='text-center text-md hover:text-white'>The soul takes birth in human form many times over here on this planet. And we can see that the human form takes its time to develop into a fully formed adult from the stage of an embryo to a foetus and so on.</p>

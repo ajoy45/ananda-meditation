@@ -6,6 +6,7 @@ import Banner from './Banner';
 import Activity from './Activity';
 import Team from './Team';
 import Pricing from './Pricing';
+import About from './About';
 
 
 const Home = () => {
@@ -18,7 +19,9 @@ const Home = () => {
     return (
         <div className=''>
             <Banner></Banner>
+            <About></About>
             <Activity></Activity>
+           
             <div>
                 <PopularClass></PopularClass>
             </div>
